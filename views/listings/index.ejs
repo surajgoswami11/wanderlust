@@ -19,15 +19,17 @@
                 opacity: 2;
                 cursor: pointer;
             }
+
             .filter p {
                 font-size: 0.8rem;
             }
 
-            .tax-info{
+            .tax-info {
                 display: none;
             }
-            .tax-toggle{
-                border: 1px solid black;    
+
+            .tax-toggle {
+                border: 1px solid black;
                 border-radius: 1rem;
                 height: 3.25rem;
                 padding: 1rem;
@@ -35,13 +37,14 @@
                 display: flex;
                 align-items: center;
             }
-            .form-check-label{
+
+            .form-check-label {
                 display: flex;
                 margin-left: 25rem;
-                
+
             }
         </style>
-        <!-- <div id="filters">
+        <div id="filters">
             <div class="filter">
                 <div><i class="fa-solid fa-fire"></i></div>
                 <p>Trending</p>
@@ -85,17 +88,17 @@
             <div class="filter">
                 <div><i class="fa-solid fa-sailboat"></i></div>
                 <p href="/new">Boats</p>
-            </div> -->
+            </div>
 
 
 
             <div class="tax-toggle mt-2">
-                <p class="mt-3"><b>
-                    "Discover the magic of staying, not just visiting. Welcome home with Airbnb."</b></p>
+                <!-- <p class="mt-3"><b>
+                    "Discover the magic of staying, not just visiting. Welcome home with Airbnb."</b></p> -->
                 <div class="form-check-reverse form-switch">
                     <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckDefault">
                     <label class="form-check-label " for="flexSwitchCheckDefault">Display Total After Taxes</label>
-                  </div>
+                </div>
             </div>
         </div>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
@@ -117,7 +120,7 @@
                                 </b>
                                 <br />
                                 &#8377;<%= listing.price.toLocaleString("en-IN") %>/night
-                                <i class="tax-info">&nbsp; &nbsp; +18% GST</i>
+                                    <i class="tax-info">&nbsp; &nbsp; +18% GST</i>
                             </p>
                         </div>
                     </div>
@@ -126,17 +129,17 @@
         </div>
     </body>
     <script>
-        let taxSwitch=document.getElementById("flexSwitchCheckDefault")
-        taxSwitch.addEventListener("click",()=>{
+        let taxSwitch = document.getElementById("flexSwitchCheckDefault")
+        taxSwitch.addEventListener("click", () => {
             console.log("clicked");
-        let taxInfo=document.getElementsByClassName("tax-info");
-       for(info of taxInfo){
-        if(info.style.display !="inline"){
-            info.style.display="inline"
-        }else{
-            info.style.display="none"
-        }
-       
-       }
+            let taxInfo = document.getElementsByClassName("tax-info");
+            for (info of taxInfo) {
+                if (info.style.display != "inline") {
+                    info.style.display = "inline"
+                } else {
+                    info.style.display = "none"
+                }
+
+            }
         });
     </script>
